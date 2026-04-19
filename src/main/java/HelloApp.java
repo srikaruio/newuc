@@ -4,14 +4,11 @@ public class HelloApp {
             System.out.println("Hello, World!");
         } else {
             StringBuilder sb = new StringBuilder();
-            int count = 0;
             for (String name : args) {
-                sb.append(name);
-                if (++count < args.length) {
-                    sb.append(", ");
-                }
+                sb.append(name).append(", ");
             }
-            System.out.println("Hello, " + sb.toString() + "!");
+            String finalNames = sb.substring(0, sb.length() - 2);
+            System.out.println("Hello, " + finalNames + "!");
         }
     }
 }
