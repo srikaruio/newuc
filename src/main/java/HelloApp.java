@@ -3,14 +3,15 @@ public class HelloApp {
         if (args.length == 0) {
             System.out.println("Hello, World!");
         } else {
-            String names = "";
-            for (int i = 0; i < args.length; i++) {
-                names += args[i];
-                if (i < args.length - 1) {
-                    names += ", ";
+            StringBuilder sb = new StringBuilder();
+            int count = 0;
+            for (String name : args) {
+                sb.append(name);
+                if (++count < args.length) {
+                    sb.append(", ");
                 }
             }
-            System.out.println("Hello, " + names + "!");
+            System.out.println("Hello, " + sb.toString() + "!");
         }
     }
 }
